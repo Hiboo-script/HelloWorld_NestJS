@@ -116,3 +116,45 @@ Cela inclut :
  ```bash
  npm install --save-dev typescript ts-node @types/node
  ```
+
+##### c) Configuration du compilateur TypeScript
+
+*On va devoir initialiser un fichier de configuration pour la compilation avec tsx !
+Il lira ce fichier avant de compiler pour décider de quelle manière il va traiter notre code.*
+
+Pour cela on utilise npx qui est dans la même ligné que npm mais qui ce coup-ci ne sert pas à la gestion
+des packages mais à leur execution en ligne de commande. Nous l'utilisons pour executer tsx et initialiser 
+le fichier de configuration :
+```bash
+npx tsx --init
+```
+Nous avons désormais un fichier de configuration tsconfig.json par défaut :
+ - target: es2016 -> Version de js trop ancienne pour des projets modernes de **NestJS**
+ - module: commonjs -> Système d'importation des modules de node, parfait pour notre projet !
+ - strict: true -> Bon reflexe de programmation pour que le compilateur soit un peu exigeant sur le code
+ - esModuleInterop: true -> Permet des imports modernes en plus de ceux de commonjs 
+ - skipLibCheck: true -> Bloque les erreurs provenant de Libs externes (**NestJS** est très verbeux)
+ - forceConsistentCasingInFileNames: true -> protège la casse dans les noms d'imports (maj/min)
+
+Nous allons devoir modifier certaines choses mais il y a déjà des paramètres qui nous conviennent
+**petite note**: *il nous manque la partie : "include" : [src] qui permet de limiter les fichiers à compiler au dossier ./src
+sans cette précision tsx compile tous les .ts qu'il trouve sous-dossiers inclus.*
+
+Voici le fichier *tsconfig.json* mis à jour pour nos projets:
+```json
+{
+    "compilerOptions" : {
+        "target": "es2020",
+        "experimentalDecorators": true, // Insert les décorateurs (nous y reviendrons)
+        "emitDecoratorMetadata": true, // Permet les metadatas nécessaire pour le typage comme on disait auparavant
+        "module": "commonjs",
+        "moduleResolution": "node", // permet de résoudre les modules importés de manière moderne
+        "outDir": "./dist", // precise ou nous devons écrire le projet compilé !
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["src"] // compile que ce qui se trouve dans ./src
+}
+```
