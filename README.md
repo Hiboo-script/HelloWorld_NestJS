@@ -68,3 +68,51 @@ Il est ensuite possible de vérifier les versions installé ainsi :
 node -v && npm -v
 ```
 ##### b) gestion de MAJ avec NVM
+
+#### III - Initialisation d'un projet NestJS
+
+*Pour me familiariser avec la structure du projet j'ai choisi de faire la mise en place
+et l'installation manuellement étape par étape et écrire les fichiers uns à uns.*
+
+##### a) package.json
+
+Ce fichier est requis pour chaque projet **node**, il centralise les informations importantes du projet (versions, modules utilisés etc...).
+
+On l'initialise ainsi :
+```bash
+npm init -y
+```
+l'option permet de passer les étapes ou on écrit ligne par ligne le fichier.
+
+##### b) installation de NestJS et ses dépendances
+
+**NestJS**, c’est un gros écosystème composé de plusieurs briques indépendantes.
+Pour bien organiser tout ça, ces briques sont rangées dans un groupe spécial appelé un *scope*, ici nommé @nestjs.
+Le @ sert à dire : "ce module fait partie de la famille NestJS."
+
+Par exemple : @nestjs/core, @nestjs/common, @nestjs/testing…
+Ce sont comme des modules officiels du projet, chacun avec un rôle précis.
+
+Pour notre part nous allons installer :
+ - @nestjs/core : le moteur du framework
+ - @nestjs/common : tout un tas de fonctionnalités de bases dont on parlera plus tard
+ - rxjs : Des fonctions de programmation asynchrone avancées -> programmation réactive
+ - reflect-metadata : gestion des métadonnées pour ne pas perdre des informations à la compilation ts -> js
+
+ l'installation est assez simple :
+ ```bash
+ npm install @nestjs/core @nestjs/common rxjs reflect-metadata
+ ```
+
+Normalement il ne doit y avoir aucun soucis à l'installation nous pouvons maintenant nous occuper
+d'installer les outils **TypeScript** qui est le vrai langage de **NestJS**.
+
+Cela inclut :
+ - typescript : compilateur qui transforme ts -> js
+ - ts-node : un executeur qui permet de dynamiquement executer du ts comme un langage interprété
+ - @types/node : les différents types spécifiques pour la programmation node
+
+ Nous allons devoir préciser --save-dev pour que les paquets soient rajouté à l'environnement de dev dans le package.json (car le projet final doit être compilé donc pas en **TypeScript**)
+ ```bash
+ npm install --save-dev typescript ts-node @types/node
+ ```
