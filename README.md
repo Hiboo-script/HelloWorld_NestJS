@@ -1,5 +1,3 @@
-<!-- toc -->
-<!-- tocstop -->- [Installer les dépendances et maj](#installer-les-dépendances-et-maj)
 - [Installer les dépendances et maj](#installer-les-dépendances-et-maj)
   - [I - Gestion de NVM](#i---gestion-de-nvm)
     - [a) Connaître la dernière LTS disponible](#a-connaître-la-dernière-lts-disponible)
