@@ -96,12 +96,13 @@ Ce sont comme des modules officiels du projet, chacun avec un rôle précis.
 Pour notre part nous allons installer :
  - @nestjs/core : le moteur du framework
  - @nestjs/common : tout un tas de fonctionnalités de bases dont on parlera plus tard
+ - @nestjs/express-platform : moteur HTTP "express" (module node pour gérer les routes en js natif) 
  - rxjs : Des fonctions de programmation asynchrone avancées -> programmation réactive
  - reflect-metadata : gestion des métadonnées pour ne pas perdre des informations à la compilation ts -> js
 
  l'installation est assez simple :
  ```bash
- npm install @nestjs/core @nestjs/common rxjs reflect-metadata
+ npm install @nestjs/core @nestjs/common @nestjs/platform-express rxjs reflect-metadata
  ```
 
 Normalement il ne doit y avoir aucun soucis à l'installation nous pouvons maintenant nous occuper
