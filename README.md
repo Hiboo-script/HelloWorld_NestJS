@@ -181,5 +181,41 @@ src/
 ├── app.module.ts
 ├── app.controller.ts
 └── app.service.ts
-````
+```
 -> *Allez lire les fichiers pour mieux comprendre*
+
+##### e) executer le projet
+
+*Maintenant que tous nos fichiers sont bien écrits il est temps de faire tourner le projet !*
+
+-**Rajouter un bouton ON**-
+
+En théorie pour lancer le projet (sans le compiler explicitement) nous devrions procéder ainsi :
+```bash
+ts-node src/main.ts
+```
+
+mais classiquement pour les projets **node** il est d'usage de mettre en route un projet autrement, on 
+va donc ajouter au *package.json* les lignes suivante : 
+```json
+"scripts" : {
+    "start" : "ts-node src/main.ts"
+}
+```
+
+Nous sommes donc en mesure de mettre en route le projet ainsi :
+```bash
+npm run start
+```
+-**Build complet du projet**-
+
+Ici le script sert pour les phases de test mais il serait utile d'étoffer un peu avec des scripts de build !
+On enrichie un peu *package.json* :
+```json
+"scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "start:prod": "node dist/main.js"
+}
+```
+

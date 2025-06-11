@@ -4,6 +4,7 @@
   "description": "J'apprend à coder en typescript et plus spécifiquement avec NestJS.",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
