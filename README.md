@@ -158,3 +158,28 @@ Voici le fichier *tsconfig.json* mis à jour pour nos projets:
     "include": ["src"] // compile que ce qui se trouve dans ./src
 }
 ```
+
+##### d) Ecriture et organisation des fichiers de base
+
+*Ici il sera nécessaire d'aller voir les fichiers dans ./src, avec les connaissances
+que nous avons nous sommes maintenant en mesure de mieux comprendre ce qu'il se passe !*
+
+-**Explication de certains termes**-:
+ - *Décorateur* : propre à NestJS, sous la forme '@Module' ou '@Get' ils typent une classe auprès de NestJS:
+    - afin qu'il sache ce qu'il est sensé en faire
+    - qu'il gère les imports/exports/dépendances à la compilation
+    - qu'il injecte des métadonnées de configuration suivant les types
+ - *constructeur* : Gère essentiellement les routes Get, Post..
+ - *service* : Gère la logique métier du projet, toutes les fonctions mise en place par le dev !
+ - *hook* : Les "événements" naturels de NestJS (initialisation d'un module, fermeture d'un module...)
+    - exemple d'utilité : la fermeture d'une connexion à une BDD lorsque l'application ferme.
+
+ -**Structure du projet**-
+ ```
+src/
+├── main.ts
+├── app.module.ts
+├── app.controller.ts
+└── app.service.ts
+````
+-> *Allez lire les fichiers pour mieux comprendre*
