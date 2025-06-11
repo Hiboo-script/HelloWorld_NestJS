@@ -69,12 +69,12 @@ node -v && npm -v
 ```
 ##### b) gestion de MAJ avec NVM
 
-#### III - Initialisation d'un projet NestJS
+### Initialisation d'un projet NestJS
 
 *Pour me familiariser avec la structure du projet j'ai choisi de faire la mise en place
 et l'installation manuellement étape par étape et écrire les fichiers uns à uns.*
 
-##### a) package.json
+#### I - package.json
 
 Ce fichier est requis pour chaque projet **node**, il centralise les informations importantes du projet (versions, modules utilisés etc...).
 
@@ -84,7 +84,7 @@ npm init -y
 ```
 l'option permet de passer les étapes ou on écrit ligne par ligne le fichier.
 
-##### b) installation de NestJS et ses dépendances
+#### II - installation de NestJS et ses dépendances
 
 **NestJS**, c’est un gros écosystème composé de plusieurs briques indépendantes.
 Pour bien organiser tout ça, ces briques sont rangées dans un groupe spécial appelé un *scope*, ici nommé @nestjs.
@@ -118,7 +118,7 @@ Cela inclut :
  npm install --save-dev typescript ts-node @types/node
  ```
 
-##### c) Configuration du compilateur TypeScript
+#### III - Configuration du compilateur TypeScript
 
 *On va devoir initialiser un fichier de configuration pour la compilation avec tsx !
 Il lira ce fichier avant de compiler pour décider de quelle manière il va traiter notre code.*
@@ -160,7 +160,7 @@ Voici le fichier *tsconfig.json* mis à jour pour nos projets:
 }
 ```
 
-##### d) Ecriture et organisation des fichiers de base
+#### IV - Ecriture et organisation des fichiers de base
 
 *Ici il sera nécessaire d'aller voir les fichiers dans ./src, avec les connaissances
 que nous avons nous sommes maintenant en mesure de mieux comprendre ce qu'il se passe !*
@@ -185,7 +185,7 @@ src/
 ```
 -> *Allez lire les fichiers pour mieux comprendre*
 
-##### e) executer le projet
+#### V - executer le projet
 
 *Maintenant que tous nos fichiers sont bien écrits il est temps de faire tourner le projet !*
 
@@ -219,4 +219,17 @@ On enrichie un peu *package.json* :
     "start:prod": "node dist/main.js"
 }
 ```
+
+### Cloner, installer et executer le projet
+
+Dans le terminal rendez-vous dans le dossier ou vous voulez cloner le projet :
+```bash
+git clone https://github.com/Hiboo-script/HelloWorld_NestJS.git
+cd HelloWorld_NestJS/
+npm install
+npm run start
+```
+
+*Assurez vous d'avoir **node** et **npm** sinon revenez au début du document !*
+
 
