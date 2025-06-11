@@ -1,3 +1,21 @@
+<!-- toc -->
+<!-- tocstop -->- [Installer les dépendances et maj](#installer-les-dépendances-et-maj)
+- [Installer les dépendances et maj](#installer-les-dépendances-et-maj)
+  - [I - Gestion de NVM](#i---gestion-de-nvm)
+    - [a) Connaître la dernière LTS disponible](#a-connaître-la-dernière-lts-disponible)
+    - [b) installer/Mettre à jour NVM](#b-installermettre-à-jour-nvm)
+  - [II - Mettre à jour node et NPM](#ii---mettre-à-jour-node-et-npm)
+    - [a) installation/mise à jour](#a-installationmise-à-jour)
+    - [b) gestion de MAJ avec NVM](#b-gestion-de-maj-avec-nvm)
+- [Initialisation d'un projet NestJS](#initialisation-dun-projet-nestjs)
+  - [I - package.json](#i---packagejson)
+  - [II - installation de NestJS et ses dépendances](#ii---installation-de-nestjs-et-ses-dépendances)
+  - [III - Configuration du compilateur TypeScript](#iii---configuration-du-compilateur-typescript)
+  - [IV - Ecriture et organisation des fichiers de base](#iv---ecriture-et-organisation-des-fichiers-de-base)
+  - [V - executer le projet](#v---executer-le-projet)
+- [Cloner, installer et executer le projet](#cloner-installer-et-executer-le-projet)
+
+
 ### Installer les dépendances et maj
 
 *Dans cette partie je m'intéresse à produire un environnement de code propre pour travailler avec **NestJs** et apprendre à l'utiliser dans les meilleurs conditions*
